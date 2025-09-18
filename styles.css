@@ -1,0 +1,444 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #ecf0f1;
+}
+
+
+.solar-system-container {
+  position: relative;
+  width: 100vmin;
+  height: 100vmin;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.sun {
+  position: absolute;
+  width: 10vmin;
+  height: 10vmin;
+  background: radial-gradient(circle at 50% 50%, #effebb, #eff888, #eff44335);
+  border-radius: 50%;
+  box-shadow: 0 0 5vmin 2vmin rgba(255, 255, 0, 0.7);
+  z-index: 100;
+  animation: sunPulse 5s infinite alternate;
+}
+
+
+@keyframes sunPulse {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.02);
+  }
+}
+.orbit-path {
+  position: absolute;
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  transform-origin: center center;
+  cursor: pointer;
+}
+.planet {
+  position: absolute;
+  border-radius: 50%;
+  cursor: default;
+  box-shadow: 0 0 1vmin rgba(0,0,0,0.5);
+  transition: transform 0.2s ease-in-out;
+  transform-origin: center center;
+}
+
+
+.planet:hover {
+  transform: scale(1.2);
+  z-index: 101;
+}
+
+
+/* Mercúrio */
+.mercury {
+  width: 1.8vmin;
+  height: 1.8vmin;
+  background-color: #b8a59a;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+.mercury-orbit {
+  width: 8vmin;
+  height: 8vmin;
+  animation: orbitMercury 8s linear infinite;
+  z-index: 8;
+}
+
+
+@keyframes orbitMercury {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* Vênus */
+.venus {
+  width: 2.8vmin;
+  height: 2.8vmin;
+  background-color: #e7d3a0;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+.venus-orbit {
+  width: 15vmin;
+  height: 15vmin;
+  animation: orbitVenus 15s linear infinite;
+  z-index: 7;
+}
+
+
+@keyframes orbitVenus {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* Terra */
+.earth {
+  width: 3.5vmin;
+  height: 3.5vmin;
+  background-color: #6d9de4;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+.earth-orbit {
+  width: 25vmin;
+  height: 25vmin;
+  animation: orbitEarth 25s linear infinite;
+  z-index: 6;
+}
+
+
+@keyframes orbitEarth {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* Marte */
+.mars {
+  width: 2.5vmin;
+  height: 2.5vmin;
+  background-color: #e67e4a;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+.mars-orbit {
+  width: 35vmin;
+  height: 35vmin;
+  animation: orbitMars 35s linear infinite;
+  z-index: 5;
+}
+
+
+@keyframes orbitMars {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* Júpiter */
+.jupiter {
+  width: 7vmin;
+  height: 7vmin;
+  background-color: #c9a47a;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+.jupiter-orbit {
+  width: 55vmin;
+  height: 55vmin;
+  animation: orbitJupiter 55s linear infinite;
+  z-index: 4;
+}
+
+
+@keyframes orbitJupiter {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* Saturno */
+.saturn {
+  width: 6vmin;
+  height: 6vmin;
+  background-color: #d3b78c;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+.saturn-orbit {
+  width: 70vmin;
+  height: 70vmin;
+  animation: orbitSaturn 70s linear infinite;
+  z-index: 3;
+}
+
+
+@keyframes orbitSaturn {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* Urano */
+.uranus {
+  width: 4.5vmin;
+  height: 4.5vmin;
+  background-color: #98d0e6;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+.uranus-orbit {
+  width: 85vmin;
+  height: 85vmin;
+  animation: orbitUranus 85s linear infinite;
+  z-index: 2;
+}
+
+
+@keyframes orbitUranus {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* Netuno */
+.neptune {
+  width: 5vmin;
+  height: 5vmin;
+  background-color: #5b75e6;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+.neptune-orbit {
+  width: 95vmin;
+  height: 95vmin;
+  animation: orbitNeptune 95s linear infinite;
+  z-index: 1;
+}
+
+
+@keyframes orbitNeptune {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* Ajustes Responsivos */
+@media (max-width: 768px) {
+  .solar-system-container {
+    width: 95vmin;
+    height: 95vmin;
+  }
+
+
+  .sun {
+    width: 12vmin;
+    height: 12vmin;
+  }
+
+
+  .mercury {
+    width: 1.5vmin;
+    height: 1.5vmin;
+  }
+  .mercury-orbit {
+    width: 12vmin;
+    height: 12vmin;
+  }
+
+
+  .venus {
+    width: 2.5vmin;
+    height: 2.5vmin;
+  }
+  .venus-orbit {
+    width: 20vmin;
+    height: 20vmin;
+  }
+
+
+  .earth {
+    width: 3vmin;
+    height: 3vmin;
+  }
+  .earth-orbit {
+    width: 35vmin;
+    height: 35vmin;
+  }
+
+
+  .mars {
+    width: 2vmin;
+    height: 2vmin;
+  }
+  .mars-orbit {
+    width: 45vmin;
+    height: 45vmin;
+  }
+
+
+  .jupiter {
+    width: 5.5vmin;
+    height: 5.5vmin;
+  }
+  .jupiter-orbit {
+    width: 65vmin;
+    height: 65vmin;
+  }
+
+
+  .saturn {
+    width: 5vmin;
+    height: 5vmin;
+  }
+  .saturn-orbit {
+    width: 80vmin;
+    height: 80vmin;
+  }
+
+
+  .uranus {
+    width: 4vmin;
+    height: 4vmin;
+  }
+  .uranus-orbit {
+    width: 90vmin;
+    height: 90vmin;
+  }
+
+
+  .neptune {
+    width: 4.5vmin;
+    height: 4.5vmin;
+  }
+  .neptune-orbit {
+    width: 100vmin;
+    height: 100vmin;
+  }
+}
+
+
+/* Modal de Informações */
+.modal-content {
+  background-color: #2c3e50;
+  margin: auto;
+  padding: 30px;
+  border: 1px solid #3498db;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 500px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+  position: relative;
+  text-align: left;
+}
+
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  cursor: pointer;
+}
+
+
+.close-button:hover,
+.close-button:focus {
+  color: #fff;
+  text-decoration: none;
+}
+
+
+.modal-title {
+  color: #f1c40f;
+  font-size: 2em;
+  margin-top: 0;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+
+.modal-info p {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+
